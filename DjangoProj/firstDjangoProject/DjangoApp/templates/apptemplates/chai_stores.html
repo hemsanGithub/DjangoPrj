@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<form method="POST">
+    This is the Chai Form Page.
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type='sumbit'>Search store</button>
+    </form>
+
+    {% if stores  %}
+    <h2>Stores_available</h2>
+    <ul>
+    {% for store in stores %}
+1     <li>{{store.name}}-{{store.location}}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+   
+{% endblock %}

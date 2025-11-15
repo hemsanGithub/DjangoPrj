@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+DjangoApp
+{% endblock %}
+
+{% block content %}
+<h1> Welcome to our DjangoApp </h1>
+<p> This is the main content of the DjangoApp. </p>
+
+<div class="grid grid-cols-3 gap-4 m-4">
+    {% for chai in chais %}
+    <div class="bg-green-500 p-3 mb-3 rounded">
+        
+        <h2 class="text-2xl font-bold">{{ chai.name }}</h2>
+        <p>{{ chai.description }}</p>
+        <img class="rounded shadow-lg" src="{{ chai.image.url }}" alt="{{ chai.name }}" width="100">
+        <a href="{% url 'django_chai_detail' chai.id %}">
+            <button type="button"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">
+                {{ chai.type }} - {{chai.id}} 
+            </button>
+        </a>
+
+    </div>                     
+        
+    {% endfor %}
+</div>
+
+{% endblock %}
+
