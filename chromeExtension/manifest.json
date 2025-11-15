@@ -1,0 +1,39 @@
+{
+   "manifest_version": 3,
+   "description": "My First  Extension",
+   "name": "CTS-Extension",
+   "background": {
+      "service_worker": "js/background.js"
+   },
+   "action": {
+      "default_title": "CTS-Extension",
+      "default_popup": "popup.html"
+   },
+   "content_scripts": [
+      {
+         "all_frames": true,
+         "css": [
+            "style.css"
+         ],
+         "js": [
+            "js/content.js"
+         ],
+         "matches": [
+            "<all_urls>"
+         ],
+         "run_at": "document_end"
+      }
+   ],
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiafzcnCixUE0OSZOUrF4D9Te68PSMnqIhneINXBNcSFfxrP+g41QHPnvrEaSb317wPff0tOPbJDD4l1iCAYpond0DkHQG9L4ebgzVzXRU1y5/XbizInpHc6U/EJtKus+Lpr3kw1YJZOl2R5V3bKxSRQMX5RA5H/cBUgUrodeUe+9US5p16gSlmFju3CecqMU/9ycEICZB1eW1HyAIIMGSUYOTHFweR9RB7m/HLyFaK3B6OYPluvSo4Mc46gTo+s3rueL61dKCZerByC/uNWbQBpBjGqhU4GWBmWZ6SFATQI8miYy4ZTK/m7CFq4gAxcIr/XgyYSWrRqx44K/l2N+MQIDAQAB",
+   "permissions": [
+      "tabs",
+      "storage",
+      "scripting"
+   ],
+   "host_permissions": [
+      "<all_urls>",
+      "https://www.flipkart.com//*",
+      "https://www.amazon.in//*"
+   ],
+   "version": "1.0.0"
+}
